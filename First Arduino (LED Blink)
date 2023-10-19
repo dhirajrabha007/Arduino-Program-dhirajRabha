@@ -1,0 +1,17 @@
+// global declaration section.
+//here we can declare the variable globallyy. And Specify the initial pins.
+
+int ledpin=13;// default in arduino uno board
+void setup() {
+ 
+  pinMode(ledpin,OUTPUT);// here the code will be run once as per the loop is provided.
+
+}
+
+void loop() {
+  // hee the code is run repeatedly
+  digitalWrite(ledpin, HIGH);// Led is Blinked by means of using digital pin 13.
+  delay(1000);
+  digitalWrite(ledpin, LOW);
+  // to use analog pin we use AnalogWrite
+}
