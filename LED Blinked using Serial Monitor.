@@ -1,0 +1,45 @@
+
+int ledpin1=6;
+int ledpin2=7;
+int ledpin3=8;
+void setup()
+{
+  pinMode(ledpin1, OUTPUT);
+  pinMode(ledpin2, OUTPUT);
+  pinMode(ledpin3, OUTPUT);
+  Serial.begin(9600);// Here the data is transmitted with a baud rate of 9600.
+  // baudrate can be defined as the bits transmitted per second serially.
+}
+
+void loop()
+{
+  
+  for(int i=0; i<5; i++){
+    Serial.println("Led in pin 6 is blinking");
+    Serial.println(i);// This itration will give the number of led is blinked
+  digitalWrite(ledpin1, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(ledpin1, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+  }
+  
+  for(int j=0; j<3; j++)
+  {  
+     Serial.println("Led in pin 7 is blinking");
+    Serial.println(j);
+    digitalWrite(ledpin2, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(ledpin2, LOW);
+  delay(1000);
+  }
+   
+  for(int c=0; c<2; c++){
+    Serial.println("Led in pin 8 is blinking");
+    Serial.println(c);
+  digitalWrite(ledpin3, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(ledpin3, LOW);
+    delay(1000);
+  }
+  
+}
