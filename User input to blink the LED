@@ -1,0 +1,23 @@
+// User input for number of time to blink the led.
+int redLED=13;
+int ontime=1000;
+int offtime=500;
+int redBlinks;// This varible will store to number of time to blink the LED. 
+int baudrate=9600;
+void setup(){
+
+  pinMode(redled,OUTPUT)
+  Serial.begin(baudrate);
+  Serial.Println("How many time do you want re led to blink ?");
+  while(Serial.available()==0){}
+  redblink=Serial.parseint(); // Syntax to take input by the user.
+  }
+ void loop()
+ {
+  for(int i=0; i< redblink; i++){
+    digitalWrite(redLED,HIGH);
+    delay(ontime);
+    digitalWrite(redLED,LOW);
+    delay(offtime);
+  }
+ }
