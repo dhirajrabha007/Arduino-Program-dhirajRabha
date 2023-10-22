@@ -1,0 +1,51 @@
+// Three LED to BLink by user input.
+int redLED=5;
+int blueLED=6;
+int greenLED=7;
+int ontime=1000;
+int offtime=500;
+int redBlink;
+int blueBlink;
+int greenBlink;
+int baudrate=9600;
+void setup(){
+
+  pinMode(redLED,OUTPUT);
+  pinMode(blueLED,OUTPUT);
+  pinMode(greenLED,OUTPUT);
+  Serial.begin(baudrate);
+  Serial.println("How many time do you want red led to blink ?");
+  while(Serial.available()==0){}
+  redBlink=Serial.parseInt(); 
+  Serial.println("How many time do you want blue led to blink ?");
+  while(Serial.available()==0){}
+  blueBlink=Serial.parseInt(); 
+  Serial.println("How many time do you want green led to blink ?");
+  while(Serial.available()==0){}
+  greenBlink=Serial.parseInt(); 
+  
+  }
+ void loop()
+ {
+  for(int i=0; i< redBlink; i++){
+    digitalWrite(redLED,HIGH);
+    delay(ontime);
+    digitalWrite(redLED,LOW);
+    delay(offtime);
+  }
+   delay(100);
+   for(int i=0; i< blueBlink; i++){
+    digitalWrite(blueLED,HIGH);
+    delay(ontime);
+    digitalWrite(blueLED,LOW);
+    delay(offtime);
+  }
+   delay(100);
+   for(int i=0; i< greenBlink; i++){
+    digitalWrite(greenLED,HIGH);
+    delay(ontime);
+    digitalWrite(greenLED,LOW);
+    delay(offtime);
+  }
+   delay(100);
+ }
