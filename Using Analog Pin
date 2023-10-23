@@ -1,0 +1,15 @@
+int redled=11;
+void setup(){
+  pinMode(11,OUTPUT);
+}
+void loop(){
+  int i=0;
+  while(i<5){
+    analogWrite(redled,102);
+    delay(500);
+    analogWrite(redled,0);
+    delay(500);
+    i++;
+  
+  }
+  delay(10000);}
