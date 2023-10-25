@@ -1,0 +1,16 @@
+// code to read the value of PotentioMeter using analog PIN in the arduino board.
+// potentio meter has 3 terminal(left/Right terminal is for GND and Suply and middle is for the reading value obtained by device).
+// Code
+int Potentiometer=A0;
+int ReadingValue;
+void setup(){
+Serial.begin(9600);
+  pinMode(Potentiometer,INPUT);}
+void loop(){
+  ReadingValue=analogRead(Potentiometer);
+  ReadingValue=map(ReadingValue,0,1023,0,255);// This map funtion set the value to a specific Range ie. here 0-1023 to 0-255. 
+    Serial.println(ReadingValue);
+  delay(500);
+  
+}
+
