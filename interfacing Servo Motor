@@ -1,0 +1,23 @@
+
+#include<Servo.h>; // In this project you need to download a library fior specifc deivice ie. Servo Motor.
+int servopin=6;
+Servo Myservo;  // creating an object 
+
+
+void setup() {
+  Myservo.attach(servopin); // attaching the object with pin.
+  
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  Myservo.write(0); // it will rotate 0 degree.
+  delay(500);
+  Myservo.write(90); // motor will rotate 90 degree
+  delay(500);
+  Myservo.write(180);// motor will rotate 180 degree.
+  delay(500);
+  // put your main code here, to run repeatedly:
+
+}
