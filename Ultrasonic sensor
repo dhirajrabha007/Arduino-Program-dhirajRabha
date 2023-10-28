@@ -1,0 +1,40 @@
+// finding distance using Ultrasonic sensor.
+int red=7;
+int green=4;
+int trigger=12;
+int echo=11;
+void setup(){
+  Serial.begin(9600);
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(trigger, OUTPUT);
+  pinMode(echo, INPUT);
+}
+void loop(){
+  long distance, duration;
+  digitalWrite(trigger, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigger, HIGH); // Transmitting an analog signal.
+  delayMicroseconds(10);
+  digitalWrite(trigger,LOW);
+  duration = pulseIn(echo,HIGH);// Receiving the incomming signal.
+  distance= (duration/2)/29.1;
+  if(distance < 6){
+    digitalWrite(red, LOW);
+    digitalWrite(green, HIGH);
+  }
+  else{
+    digitalWrite(red, HIGH);
+    digitalWrite(greeb, LOW);
+  }
+  if(distance>=200 || distance<=0){
+    serial.println("out of range");
+
+  }
+  else{
+    serial.print(distance);
+    Serial.println(" cm");
+  }
+  delay(500);
+
+}
