@@ -1,0 +1,18 @@
+int IRLED=A0;
+int Buzzer=7;
+int sensorvalue=0;
+void setup(){
+  serial.begin(9600);
+  pinMode(Buzzer, OUTPUT);
+}
+void loop(){
+  sensorvalue= analogRead(IRLED);
+  if(sensorvalue>100){
+    serial.println("Fir Detected");
+    digitalWrite(Buzzer, HIGH);
+    delay(1000);
+  }else{
+    digitalWrite(Buzzer, LOW);
+    delay(500);
+  }
+}
