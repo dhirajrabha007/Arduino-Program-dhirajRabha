@@ -1,0 +1,21 @@
+int x;
+int y;
+int z;
+int val;
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  x= analogRead(A0);
+  Serial.println(x);
+  y= analogRead(A1);
+  Serial.println(A1);
+  z= analogRead(A2);
+  Serial.println(z);
+  delay(3000);
+
+}
